@@ -14,11 +14,10 @@ try {
   app.get('/weather', (request, response) => {
     // const forcastArr = weather.data.map(weatherObj => new Forecast(weatherObj.datetime, weatherObj.weather.description));
     const forcastArr = weather.data.map(weatherObj => new Forecast(weatherObj));
-    // response.json(data);
+    response.json(data);
     response.send(forcastArr);
   });
 } catch (error) {
-  // eslint-disable-next-line no-undef
   handleErrors(error, response);
 }
 function Forecast(weatherObj) {
